@@ -34,11 +34,11 @@ router = APIRouter( tags=["Todos"])
 #         "todo_id": todo_id
 #     }
 
-# @router.get("/search")
-# def search_todos(status: bool = False):
-#     return {
-#         "status": status
-#     }
+@router.get("/search")
+def search_todos(status: bool = False):
+    return {
+        "status": status
+    }
 
 @router.post("/todos", response_model=TodoResponse,status_code=status.HTTP_201_CREATED)
 def create_todo(
